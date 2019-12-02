@@ -3,12 +3,12 @@ classdef Deck
         cards = [];
     end
     methods
-        function deck = Deck()
+        function obj = Deck()
             import pkg.Card.*
             for i = ["Hearts", "Clubs", "Diamonds", "Spades"]
                 for j = [2:10, "J", "Q", "K", "A"]
                     x = Card(i, j, 0);
-                    deck.cards = [deck.cards, x];
+                    obj.cards = [obj.cards, x];
                 end
             end
         end
