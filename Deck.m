@@ -5,8 +5,8 @@ classdef Deck
     methods
         function obj = Deck()
             import pkg.Card.*
-            for i = 1:4
-                for j = 2:14
+            for i = ["Hearts", "Clubs", "Diamonds", "Spades"]
+                for j = [2:10, "J", "Q", "K", "A"]
                     x = Card(i, j, 0);
                     obj.cards = [obj.cards, x];
                 end
