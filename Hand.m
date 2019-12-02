@@ -3,9 +3,9 @@ classdef Hand
         cards = [];
     end
     methods
-        function hand = Hand(deck)
+        function obj = Hand(deck)
             import pkg.Deck.*
-            hand.cards = deck.cards(1:5);
+            obj.cards = deck.cards(1:5);
             deck.cards(1:5) = [];
         end
     end
