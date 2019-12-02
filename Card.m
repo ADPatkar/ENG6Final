@@ -5,15 +5,15 @@ classdef Card
         privacy = 0; %0 = facedown, 1 = faceup
     end
     methods
-        function obj = Card(suit, value, privacy)
+        function card = Card(suit, value, privacy)
             if nargin == 3
-                obj.suit = suit;
-                obj.value = value;
-                obj.privacy = privacy;
+                card.suit = suit;
+                card.value = value;
+                card.privacy = privacy;
             else
-                obj.suit = [];
-                obj.value = [];
-                obj.privacy = [];
+                card.suit = [];
+                card.value = [];
+                card.privacy = [];
             end
         end
     end
