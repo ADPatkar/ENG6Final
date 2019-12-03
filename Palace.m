@@ -6,10 +6,7 @@ classdef Palace
         function obj= Palace(deck)
             import pkg.Deck.*
             import pkg.Card.*
-            obj.places = [deck.cards(1:3);deck.cards(4:6)];
-           
-            
-            
+            obj.places = [deck.cards(1:2);deck.cards(3:4);deck.cards(5:6)];
         end
     end
 end
