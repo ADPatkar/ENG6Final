@@ -3,7 +3,6 @@ classdef Deck
         cards = [];
         p1Hand
         dealerHand
-        discard
     end
     methods (Access = public)
         function obj = Deck()
@@ -37,8 +36,6 @@ classdef Deck
             
             obj.dealerHand = Hand(obj);
             obj.cards(1:2) = [];
-
-            obj.discard = DiscardPile();
         end
     end
 end
