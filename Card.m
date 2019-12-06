@@ -1,10 +1,11 @@
 classdef Card
-    properties
+    properties (Access = public)
         suit;
         value;
         privacy = 0; %0 = facedown, 1 = faceup
     end
-    methods
+    
+    methods (Access = public)
         function obj = Card(suit, value, privacy)
             if nargin == 3
                 obj.suit = suit;

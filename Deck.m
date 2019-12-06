@@ -1,16 +1,14 @@
 classdef Deck
-    properties
+    properties (Access = public)
         cards = [];
         p1Hand
-        p2Hand
-        p1Palace
-        p2Palace
+        dealerHand
+        discard
     end
-    methods
+    methods (Access = public)
         function obj = Deck()
             import pkg.Card.*
             import pkg.Hand.*
-            import pkg.Palace.*
             for i = ["Hearts", "Clubs", "Diamonds", "Spades"]
                 for j = [2:10, "J", "Q", "K", "A"]
                     x = Card(i, j, 0);
@@ -20,21 +18,12 @@ classdef Deck
             obj.cards = obj.cards(randperm(52)); %randomizer
             
             %game start production
-            obj.p1Palace = Palace(obj);
-            obj.cards(1:6) = [];
-            for i = (1:3)
-                obj.p1Palace.places(i).privacy = 1;
-            end
-            obj.p2Palace = Palace(obj);
-            obj.cards(1:6) = [];
-            for i = (1:3)
-                obj.p2Palace.places(i).privacy = 1;
-            end
-            
             obj.p1Hand = Hand(obj);
-            obj.cards(1:5) = [];
-            obj.p2Hand = Hand(obj);
-            obj.cards(1:5) = [];
+            obj.cards(1:2) = [];
+            obj.dealerHand = Hand(obj);
+            obj.cards(1:2) = [];
+            
+            obj.discard = DiscardPile();
         end
     end
 end
